@@ -3,7 +3,7 @@
 **Algorithmic testbed for the Lagrange four-squares problem**
 
 ![Version](https://img.shields.io/badge/Version-1.0-blue)
-![Language](https://img.shields.io/badge/Language-JavaSE-1.8-green)
+![Language](https://img.shields.io/badge/Language-JavaSE_1.8-green)
 
 ------
 
