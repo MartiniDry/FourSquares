@@ -13,15 +13,15 @@ The above code proposes different algorithms to find all solutions to the Lagran
 
 The following algorithms have been implemented in Java:
 
-1) **Naive algorithm**<br/>→ we swipe `a`, `b`, `c` and `d` to find all solutions
+1) **Naive algorithm**<br/>→ we swipe `a`, `b`, `c` and `d` to find all solutions.
 
-2) **Degree-4 checking (modulo)**: checking parameter `d` using the modulo<br/>→ we only swipe over `a`, `b` and `c` and check that **`d` ∈ ℕ** using the instruction: `d % 1 == 0`
+2) **Degree-4 checking (modulo)**: checking parameter `d` using the modulo<br/>→ we only swipe over `a`, `b` and `c` and check that **`d` ∈ ℕ** using the instruction: `d % 1 == 0`.
 
 3) **Simple upper-bounding**: setting an upper-bound to `a`, `b` and `c`<br/>→ `a` is majorated using the problem formula and we set `b < a` and `c < b` to avoid symmetrical solutions. When we find a solution, it implies that `a > b > c > d`.
 
 4) **Lower-bounding**: setting a lower bound to `a`, `b` and `c`<br/>→ those bound are easily deducted from the problem formula: `a²+b²+c²+d² = n` and the below optimization. It implies that `4a² > n`, `3b² > n-a²` and `2c² > n-a²-b²`.
 
-5) **Degree-4 checking (cast)**: checking parameter `d` using Java type casting<br/>→ we check that **`d` ∈ ℕ** using the instruction: `d == (int) d`
+5) **Degree-4 checking (cast)**: checking parameter `d` using Java type casting<br/>→ we check that **`d` ∈ ℕ** using the instruction: `d == (int) d`.
 
 6) **Enhanced upper-bounding**: combining the optimization 3 with another upper-bound<br/>→ the second bounding can be deduced from the problem formula.
 
@@ -35,5 +35,13 @@ A simple table sums up some important features for those algorithms:
 | 5 - C4(cast) + UB + LB | O(n³) | O(1) | `YES` |
 | 6 - C4(cast) + EUB + LB | O(n³) | O(1) | `YES` |
 
-Here is a benchmark I made in my own laptop:
+---
+
+Here is a benchmark I made in my laptop:
+
+    PC  - ASUS R510C
+    CPU - Intel Core i5-3337U (x64)
+    OS - Windows 10 v.21H1 build 19043.1586
+    2 physical cores
+    
 ![Benchmark from 100 to 200.000](res/benchmark_1e2_2e6.png)
