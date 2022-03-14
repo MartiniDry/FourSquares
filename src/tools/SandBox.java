@@ -6,7 +6,42 @@ import java.util.Arrays;
 public class SandBox {
 	public static long rawCounter, algoCounter;
 
-	public static void execute(EAlgo algorithm, int number) {
+	public static long execute(EAlgo algorithm, int number) {
+		rawCounter = (int) Math.pow((int) Math.sqrt(number) + 1, 4);
+		algoCounter = 0;
+
+		long tic = System.currentTimeMillis();
+
+		ArrayList<int[]> solutions = null;
+		switch (algorithm) {
+			case METHOD_1:
+				solutions = method1(number);
+				break;
+			case METHOD_2:
+				solutions = method2(number);
+				break;
+			case METHOD_3:
+				solutions = method3(number);
+				break;
+			case METHOD_4:
+				solutions = method4(number);
+				break;
+			case METHOD_5:
+				solutions = method5(number);
+				break;
+			case METHOD_6:
+				solutions = method6(number);
+				break;
+			default:
+				break;
+		}
+
+		long toc = System.currentTimeMillis();
+		
+		return toc - tic;
+	}
+	
+	public static long executeWithLog(EAlgo algorithm, int number) {
 		rawCounter = (int) Math.pow((int) Math.sqrt(number) + 1, 4);
 		algoCounter = 0;
 
@@ -44,6 +79,8 @@ public class SandBox {
 		System.out.println("\nrawCounter: " + rawCounter + ", algoCounter: " + algoCounter + " ("
 				+ String.format("%.2f", 100.0 * algoCounter / rawCounter) + "%)");
 		System.out.println("Durée du calcul : " + (toc - tic) + "ms");
+
+		return toc - tic;
 	}
 
 	/** Méthode naïve pour le calcul */

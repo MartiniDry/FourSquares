@@ -20,7 +20,7 @@ public class FourSquares {
 	}
 
 	public static void calculateSolutions(int number) {
-		SandBox.execute(EAlgo.METHOD_6, number);
+		SandBox.executeWithLog(EAlgo.METHOD_6, number);
 	}
 
 	private static void displaySolutions(int number) {
