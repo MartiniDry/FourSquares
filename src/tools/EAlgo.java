@@ -1,12 +1,12 @@
 package tools;
 
 public enum EAlgo {
-	METHOD_1("Méthode 1"), //
-	METHOD_2("Méthode 2"), //
-	METHOD_3("Méthode 3"), //
-	METHOD_4("Méthode 4"), //
-	METHOD_5("Méthode 5"), //
-	METHOD_6("Méthode 6");
+	METHOD_1("1 - Naive"), //
+	METHOD_2("2 - C4(mod)"), //
+	METHOD_3("3 - C4(mod) + UB"), //
+	METHOD_4("4 - C4(mod) + UB + LB"), //
+	METHOD_5("5 - C4(cast) + UB + LB"), //
+	METHOD_6("6 - C4(cast) + EUB + LB");
 
 	public String description;
 

@@ -10,33 +10,32 @@ public class SandBox {
 		rawCounter = (int) Math.pow((int) Math.sqrt(number) + 1, 4);
 		algoCounter = 0;
 
-		long tic = System.currentTimeMillis();
+		long tic = System.nanoTime();
 
-		ArrayList<int[]> solutions = null;
 		switch (algorithm) {
 			case METHOD_1:
-				solutions = method1(number);
+				method1(number);
 				break;
 			case METHOD_2:
-				solutions = method2(number);
+				method2(number);
 				break;
 			case METHOD_3:
-				solutions = method3(number);
+				method3(number);
 				break;
 			case METHOD_4:
-				solutions = method4(number);
+				method4(number);
 				break;
 			case METHOD_5:
-				solutions = method5(number);
+				method5(number);
 				break;
 			case METHOD_6:
-				solutions = method6(number);
+				method6(number);
 				break;
 			default:
 				break;
 		}
 
-		long toc = System.currentTimeMillis();
+		long toc = System.nanoTime();
 		
 		return toc - tic;
 	}
@@ -45,7 +44,7 @@ public class SandBox {
 		rawCounter = (int) Math.pow((int) Math.sqrt(number) + 1, 4);
 		algoCounter = 0;
 
-		long tic = System.currentTimeMillis();
+		long tic = System.nanoTime();
 
 		ArrayList<int[]> solutions = null;
 		switch (algorithm) {
@@ -71,14 +70,14 @@ public class SandBox {
 				break;
 		}
 
-		long toc = System.currentTimeMillis();
+		long toc = System.nanoTime();
 
 		System.out.println("\nListe des solutions indépendantes (" + solutions.size() + " solutions) :");
 		solutions.forEach(sol -> System.out.println(Arrays.toString(sol)));
 
 		System.out.println("\nrawCounter: " + rawCounter + ", algoCounter: " + algoCounter + " ("
 				+ String.format("%.2f", 100.0 * algoCounter / rawCounter) + "%)");
-		System.out.println("Durée du calcul : " + (toc - tic) + "ms");
+		System.out.println("Durée du calcul : " + ((toc - tic) / 1e6) + "ms");
 
 		return toc - tic;
 	}
@@ -106,10 +105,10 @@ public class SandBox {
 	public static ArrayList<int[]> method2(int n) {
 		ArrayList<int[]> result = new ArrayList<>();
 
-		int majA = (int) Math.sqrt(n);
-		for (int a = majA; a >= 0; a--) {
-			for (int b = a; b >= 0; b--) {
-				for (int c = b; c >= 0; c--) {
+		int max = (int) Math.sqrt(n);
+		for (int a = max; a >= 0; a--) {
+			for (int b = max; b >= 0; b--) {
+				for (int c = max; c >= 0; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
 					if (d % 1 == 0)
