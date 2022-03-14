@@ -28,12 +28,12 @@ The following algorithms have been implemented in Java:
 A simple table sums up some important features for those algorithms:
 | Algorithm | Time complexity | Memory complexity | Redundant solutions |
 |:---|:---:|:---:|:---:|
-| 1 - naive | O(n⁴) | O(1) | NO |
-| 2 - C4(mod) | O(n³) | O(1) | NO |
-| 3 - C4(mod) + UB | O(n³) | O(1) | NO |
-| 4 - C4(mod) + UB + LB | O(n³) | O(1) | `YES` |
-| 5 - C4(cast) + UB + LB | O(n³) | O(1) | `YES` |
-| 6 - C4(cast) + EUB + LB | O(n³) | O(1) | `YES` |
+| 1 - naive | O(n⁴) | O(1) | YES |
+| 2 - C4(mod) | O(n³) | O(1) | YES |
+| 3 - C4(mod) + UB | O(n³) | O(1) | YES |
+| 4 - C4(mod) + UB + LB | O(n³) | O(1) | `NO` |
+| 5 - C4(cast) + UB + LB | O(n³) | O(1) | `NO` |
+| 6 - C4(cast) + EUB + LB | O(n³) | O(1) | `NO` |
 
 ---
 
