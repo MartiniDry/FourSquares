@@ -11,13 +11,13 @@ public class TestBed {
 	static File resultsFile = new File("log/table.csv");
 
 	public static void main(String... args) {
-		int iterations = 2;
+		int iterations = 5;
 		List<Integer> values = Arrays.asList( //
+				/*1000000, 500000, 400000, 300000, 250000, */200000, 160000, 120000, //
 				100000, 80000, 60000, 50000, 40000, 30000, 25000, 20000, 16000, 12000, //
 				10000, 8000, 6000, 5000, 4000, 3000, 2500, 2000, 1600, 1200, //
 				1000, 800, 600, 500, 400, 300, 250, 200, 160, 120, //
-				100, 80, 60, 50, 40, 30, 25, 20, 16, 12, //
-				10);
+				100);
 
 		try (FileWriter fw = new FileWriter(resultsFile)) {
 			fw.write(";");
@@ -35,6 +35,7 @@ public class TestBed {
 					for (int i = 0; i < iterations; i++) {
 						long duration = SandBox.execute(algo, val);
 						durationMean += duration;
+						System.out.print("#");
 					}
 
 					durationMean /= iterations;
