@@ -37,7 +37,7 @@ A simple table sums up some important features for those algorithms:
 
 ---
 
-Here is a benchmark I made in my laptop:
+Here is a benchmark I made in my laptop. For each algorithm and each input value, 5 iterations have been done and the mean value is displayed in the graph:
 
     PC  - ASUS R510C
     CPU - Intel Core i5-3337U (x64)
