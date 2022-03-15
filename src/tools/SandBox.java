@@ -142,11 +142,11 @@ public class SandBox {
 		ArrayList<int[]> result = new ArrayList<>();
 
 		int majA = (int) Math.sqrt(n);
-		int minA = (int) Math.sqrt(n / 4) + 1;
+		int minA = (int) Math.ceil(Math.sqrt(n / 4));
 		for (int a = majA; a >= minA; a--) {
-			int minB = (int) Math.sqrt((n - a * a) / 3) + 1;
+			int minB = (int) Math.ceil(Math.sqrt((n - a * a) / 3));
 			for (int b = a; b >= minB; b--) {
-				int minC = (int) Math.sqrt((n - a * a - b * b) / 2) + 1;
+				int minC = (int) Math.ceil(Math.sqrt((n - a * a - b * b) / 2));
 				for (int c = b; c >= minC; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
@@ -163,11 +163,11 @@ public class SandBox {
 		ArrayList<int[]> result = new ArrayList<>();
 
 		int majA = (int) Math.sqrt(n);
-		int minA = (int) Math.sqrt(n / 4) + 1;
+		int minA = (int) Math.ceil(Math.sqrt(n / 4));
 		for (int a = majA; a >= minA; a--) {
-			int minB = (int) Math.sqrt((n - a * a) / 3) + 1;
+			int minB = (int) Math.ceil(Math.sqrt((n - a * a) / 3));
 			for (int b = a; b >= minB; b--) {
-				int minC = (int) Math.sqrt((n - a * a - b * b) / 2) + 1;
+				int minC = (int) Math.ceil(Math.sqrt((n - a * a - b * b) / 2));
 				for (int c = b; c >= minC; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
@@ -185,13 +185,13 @@ public class SandBox {
 		ArrayList<int[]> result = new ArrayList<>();
 
 		int majA = (int) Math.sqrt(n);
-		int minA = (int) Math.sqrt(n / 4) + 1;
+		int minA = (int) Math.ceil(Math.sqrt(n / 4));
 		for (int a = majA; a >= minA; a--) {
 			int majB = (int) Math.sqrt(n - a * a);
-			int minB = (int) Math.sqrt((n - a * a) / 3) + 1;
+			int minB = (int) Math.ceil(Math.sqrt((n - a * a) / 3));
 			for (int b = Math.min(a, majB); b >= minB; b--) {
 				int majC = (int) Math.sqrt(n - a * a - b * b);
-				int minC = (int) Math.sqrt((n - a * a - b * b) / 2) + 1;
+				int minC = (int) Math.ceil(Math.sqrt((n - a * a - b * b) / 2));
 				for (int c = Math.min(b, majC); c >= minC; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
