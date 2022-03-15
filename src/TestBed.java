@@ -66,7 +66,7 @@ public class TestBed {
 		File resultsAimingFile = new File("log/benchmark_aiming.csv");
 
 //		List<Integer> values = IntStream.range(100, 2000).boxed().collect(Collectors.toList());
-		List<Integer> values = IntStream.range(10, 6000).filter(val -> val % 5 == 0).boxed().collect(Collectors.toList());
+		List<Integer> values = IntStream.range(10, 10000).filter(val -> val % 5 == 0).boxed().collect(Collectors.toList());
 		
 		try (FileWriter fw = new FileWriter(resultsAimingFile)) {
 			fw.write(";");

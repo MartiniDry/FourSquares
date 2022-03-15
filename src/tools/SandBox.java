@@ -141,12 +141,12 @@ public class SandBox {
 	public static ArrayList<int[]> method4(int n) {
 		ArrayList<int[]> result = new ArrayList<>();
 
-		int majA = (int) Math.sqrt(n);
-		int minA = (int) Math.ceil(Math.sqrt(n / 4));
+		int majA = floor(Math.sqrt(n));
+		int minA = ceil(Math.sqrt(n / 4));
 		for (int a = majA; a >= minA; a--) {
-			int minB = (int) Math.ceil(Math.sqrt((n - a * a) / 3));
+			int minB = ceil(Math.sqrt((n - a * a) / 3));
 			for (int b = a; b >= minB; b--) {
-				int minC = (int) Math.ceil(Math.sqrt((n - a * a - b * b) / 2));
+				int minC = ceil(Math.sqrt((n - a * a - b * b) / 2));
 				for (int c = b; c >= minC; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
@@ -162,12 +162,12 @@ public class SandBox {
 	public static ArrayList<int[]> method5(int n) {
 		ArrayList<int[]> result = new ArrayList<>();
 
-		int majA = (int) Math.sqrt(n);
-		int minA = (int) Math.ceil(Math.sqrt(n / 4));
+		int majA = floor(Math.sqrt(n));
+		int minA = ceil(Math.sqrt(n / 4));
 		for (int a = majA; a >= minA; a--) {
-			int minB = (int) Math.ceil(Math.sqrt((n - a * a) / 3));
+			int minB = ceil(Math.sqrt((n - a * a) / 3));
 			for (int b = a; b >= minB; b--) {
-				int minC = (int) Math.ceil(Math.sqrt((n - a * a - b * b) / 2));
+				int minC = ceil(Math.sqrt((n - a * a - b * b) / 2));
 				for (int c = b; c >= minC; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
@@ -184,14 +184,14 @@ public class SandBox {
 	public static ArrayList<int[]> method6(int n) {
 		ArrayList<int[]> result = new ArrayList<>();
 
-		int majA = (int) Math.sqrt(n);
-		int minA = (int) Math.ceil(Math.sqrt(n / 4));
+		int majA = floor(Math.sqrt(n));
+		int minA = ceil(Math.sqrt(n / 4));
 		for (int a = majA; a >= minA; a--) {
-			int majB = (int) Math.sqrt(n - a * a);
-			int minB = (int) Math.ceil(Math.sqrt((n - a * a) / 3));
+			int majB = floor(Math.sqrt(n - a * a));
+			int minB = ceil(Math.sqrt((n - a * a) / 3));
 			for (int b = Math.min(a, majB); b >= minB; b--) {
-				int majC = (int) Math.sqrt(n - a * a - b * b);
-				int minC = (int) Math.ceil(Math.sqrt((n - a * a - b * b) / 2));
+				int majC = floor(Math.sqrt(n - a * a - b * b));
+				int minC = ceil(Math.sqrt((n - a * a - b * b) / 2));
 				for (int c = Math.min(b, majC); c >= minC; c--) {
 					algoCounter++;
 					double d = Math.sqrt(n - a * a - b * b - c * c);
@@ -202,5 +202,14 @@ public class SandBox {
 		}
 
 		return result;
+	}
+	
+	public static int floor(double number) {
+		return (int) number;
+	}
+	
+	public static int ceil(double number) {
+		int floor = (int) number;
+		return floor + (floor == number ? 0 : 1);
 	}
 }
