@@ -13,7 +13,7 @@ The above code proposes different algorithms to find all solutions to the Lagran
 
 The following algorithms have been implemented in Java:
 
-1) **Naive algorithm**<br/>→ we swipe `a`, `b`, `c` and `d` to find all solutions. The majorant is deducted from the fact that **`X ≤ sqrt(n/4)`, where `X = a, b, c, d`**.
+1) **Naive algorithm**<br/>→ we swipe `a`, `b`, `c` and `d` to find all solutions. The majorant is deducted from the fact that `X ≤ sqrt(n/4)`, where `X = a, b, c, d`.
 
 2) **Degree-4 checking (modulo)**: checking parameter `d` using the modulo<br/>→ we only swipe over `a`, `b` and `c` and check that **`d` ∈ ℕ** using the instruction: `d % 1 == 0`.
 
