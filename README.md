@@ -17,7 +17,7 @@ The following algorithms have been implemented in Java:
 
 2) **Degree-4 checking (modulo)**: checking parameter `d` using the modulo<br/>→ we only swipe over `a`, `b` and `c` and check that **`d` ∈ ℕ** using the instruction: `d % 1 == 0`.
 
-3) **Simple upper-bounding**: setting an upper-bound to `a`, `b` and `c`<br/>→ the folloowing constraint has been given to avoid redundant solutions: `a > b > c > d` (e.g. `[2,2,0,0]` and `[0,2,0,2]` are solutions for `n=32`).
+3) **Simple upper-bounding**: setting an upper-bound to `a`, `b` and `c`<br/>→ the following constraint has been given to avoid redundant solutions: `a > b > c > d` (e.g. `[2,2,0,0]` and `[0,2,0,2]` are redundant solutions for `n=32`).
 
 4) **Lower-bounding**: setting a lower bound to `a`, `b` and `c`<br/>→ those bounds are easily deducted from the problem formula: `a²+b²+c²+d² = n` and the below optimization. It implies that `4a² > n`, `3b² > n-a²` and `2c² > n-a²-b²`.
 
