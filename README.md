@@ -15,13 +15,13 @@ The following algorithms have been implemented in Java:
 
 1) **Naive algorithm**<br/>→ we swipe `a`, `b`, `c` and `d` to find all solutions. The majorant is deducted from the fact that `X ≤ sqrt(n/4)`, where `X = a, b, c, d`.
 
-2) **Degree-4 checking (modulo)**: checking parameter `d` using the modulo<br/>→ we only swipe over `a`, `b` and `c` and check that **`d` ∈ ℕ** using the instruction: `d % 1 == 0`.
+2) **Degree-4 checking (modulo)**: checking parameter `d` using the modulo<br/>→ we only swipe over `a`, `b` and `c` and check that `d` ∈ ℕ using the instruction: `d % 1 == 0`.
 
-3) **Simple upper-bounding**: setting an upper-bound to `a`, `b` and `c`<br/>→ the following constraint has been given to avoid redundant solutions: `a > b > c > d` (e.g. `[2,2,0,0]` and `[0,2,0,2]` are redundant solutions for `n=32`).
+3) **Simple upper-bounding**: setting an upper-bound to `a`, `b` and `c`<br/>→ the following constraint has been given to avoid redundant solutions: `a ≥ b ≥ c ≥ d` (e.g. `[4,4,0,0]` and `[0,4,0,4]` are redundant solutions for `n=32`).
 
-4) **Lower-bounding**: setting a lower bound to `a`, `b` and `c`<br/>→ those bounds are easily deducted from the problem formula: `a²+b²+c²+d² = n` and the below optimization. It implies that `4a² > n`, `3b² > n-a²` and `2c² > n-a²-b²`.
+4) **Lower-bounding**: setting a lower bound to `a`, `b` and `c`<br/>→ those bounds are easily deducted from the problem formula: `a²+b²+c²+d² = n` and the below optimization. It implies that `4a² ≥ n`, `3b² ≥ n-a²` and `2c² ≥ n-a²-b²`.
 
-5) **Degree-4 checking (cast)**: checking parameter `d` using Java type casting<br/>→ we check that **`d` ∈ ℕ** using the instruction: `d == (int) d`.
+5) **Degree-4 checking (cast)**: checking parameter `d` using Java type casting<br/>→ we check that `d` ∈ ℕ using the instruction: `d == (int) d`.
 
 6) **Enhanced upper-bounding**: combining the optimization 3 with another upper-bound<br/>→ those bounds can be easily deduced from the problem formula; `a² ≤ n`, `b² ≤ n-a²` and `c² ≤ n-a²-b²`.
 
